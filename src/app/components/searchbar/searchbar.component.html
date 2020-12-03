@@ -1,0 +1,11 @@
+<div class="searchbar">
+  <span class="p-input-icon-left query">
+    <i class="pi pi-search"></i>
+    <input type="text" pInputText [(ngModel)]="query" placeholder="Search" (keyup.enter)="onSearch()">
+  </span>
+  <p-dropdown class="candidate-input" [options]="candidates" [(ngModel)]="candidate" (onChange)="onCandidateSelect()">
+  </p-dropdown>
+  <p-multiSelect [options]="categories$ | async" [(ngModel)]="selectedCategories" defaultLabel="Category Filter"
+    placeholder="Category Filter" selectedItemsLabel="Category Filter" maxSelectedLabels="0" (onChange)="onCategorySelect($event)">
+  </p-multiSelect>
+</div>

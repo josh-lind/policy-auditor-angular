@@ -1,0 +1,41 @@
+.progress {
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
+.header-box {
+    color: white;
+    background-color: rgb(54, 81, 131);
+    padding: 0 2ex 1em;
+}
+
+.split-container {
+    display: flex;
+    margin-top: 1em;
+
+    .half {
+        width: 50%; 
+
+        .pres-name {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            .headshot {
+                border-radius: 100%;
+                width: 80px;
+                height: 80px;
+                margin-right: 1em;
+            }
+        
+            h2 {
+                font-weight: bold;
+                font-size: 2em;
+                color: #333;
+                text-align: center;
+            }
+        } 
+    }
+}

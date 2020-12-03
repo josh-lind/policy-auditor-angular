@@ -1,0 +1,9 @@
+<div *ngIf="results.length > 0" class="container">
+    <div *ngFor="let result of results">
+        <app-result-card [result]="result" [candidate]="candidate"></app-result-card>
+    </div>
+</div>
+
+<div *ngIf="results.length == 0 && (hasSearched$ | async)" class="no-results">
+    No documents found for '{{lastQuery$ | async}}' in the selected categories. Please try a different search or select different categories.
+</div>

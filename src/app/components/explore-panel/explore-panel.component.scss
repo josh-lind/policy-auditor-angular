@@ -1,0 +1,36 @@
+.container {
+  height: 100%;
+  width: 40ex;
+  background-color: white;
+  margin: 0;
+  overflow-y: scroll;
+
+  h3 {
+    border-bottom: 2px solid black;
+    padding-bottom: 0.5em;
+    margin: 1em 2ex 0.5em;
+  }
+
+  .explore-item {
+    display: flex;
+    padding: 5px 2.5ex;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .title {
+      flex: 1;
+    }
+
+    app-summary-hover {
+      flex: 0;
+    }
+  }
+
+  .explore-item:hover {
+    background-color: #aaa;
+  }
+}

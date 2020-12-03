@@ -1,0 +1,10 @@
+<div class="container">
+  <h3>Explore this Document</h3>
+
+  <div *ngFor="let term of terms" class="explore-item">
+    <a [href]="term.articleLink" target="_blank" class="title">{{
+      term.articleTitle
+    }}</a>
+    <app-summary-hover [summary]="term.articleSummary"></app-summary-hover>
+  </div>
+</div>

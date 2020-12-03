@@ -1,0 +1,36 @@
+$item-top-margin: 3px;
+
+.searchbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .query {
+    min-width: 50ex;
+    margin-right: 2ex;
+    flex-grow: 1;
+    margin-top: $item-top-margin;
+
+    input {
+      width: 100%;
+    }
+  }
+
+  .candidate-input {
+    margin-right: 2ex;
+    margin-top: $item-top-margin;
+  }
+
+  .category-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: $item-top-margin;
+
+    .label {
+      margin-right: 1ex;
+    }
+  }  
+}

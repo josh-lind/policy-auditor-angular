@@ -1,0 +1,104 @@
+$biden-blue: #4682B4;
+$trump-red: #8B0000;
+
+.container {
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  margin: 0 2ex 1em;
+  padding: 0 15px;
+}
+
+.biden {
+  border-top: 4px solid $biden-blue;
+}
+
+.trump {
+  border-top: 4px solid $trump-red;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  h2 {
+    flex-grow: 1;
+    flex-shrink: 1;
+    text-overflow: ellipsis;
+  }
+
+  a, button {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.categories {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .chip {
+    margin-right: 1ex;
+    margin-top: 3px;
+    color: white;
+    font-size: smaller;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 0 3px 3px 3px;
+  }
+
+  .biden {
+    background-color: $biden-blue;
+  }
+
+  .trump {
+    background-color: $trump-red;
+  }
+
+  .biden:hover {
+    border-color: #326294;
+    background-color: #326294;
+    cursor: pointer;
+  }
+
+  .trump:hover {
+    border-color: #5B0000;
+    background-color: #5B0000;
+    cursor: pointer;
+  }
+}
+
+.excerpt {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1em;
+
+  .mark {
+    font-size: xx-large;
+    font-family: serif;
+  }
+
+  .content {
+    padding-top: 10px;
+    padding-left: 5px;
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1em;
+
+    .confidence {
+      flex-grow: 1;
+    }
+
+    button {
+      margin-left: 2px;
+      color: inherit;
+    }
+}

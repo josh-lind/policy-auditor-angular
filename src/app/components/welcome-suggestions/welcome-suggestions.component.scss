@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  width: 99vw;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    font-size: 1.3em;
+    width: 40ex;
+    max-width: 80%;
+    text-align: center;
+  }
+
+  .suggestions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80ex;
+    max-width: 80%;
+    justify-content: center;
+
+    .suggestion {
+      height: 2em;
+      line-height: 2em;
+      background-color: rgb(54, 81, 131);
+      border-radius: 1em;
+      margin: 6px 3px;
+      padding: 0 1ex;
+      color: white;
+    }
+
+    .suggestion:hover {
+      cursor: pointer;
+      background-color:  rgb(40, 60, 100);
+    }
+  }
+
+  .flag-mag {
+    width: 25%;
+    min-width: 300px;
+    margin-bottom: 1em;
+  }  
+}

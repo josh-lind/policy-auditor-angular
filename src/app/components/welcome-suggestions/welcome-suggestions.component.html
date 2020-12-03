@@ -1,0 +1,18 @@
+<div class="container">
+  
+  <p>
+    Enter a topic to find and explore related documents from each candidate, or
+    choose one from below.
+  </p>
+
+  <img class="flag-mag" src="../assets/flag-mag.svg" alt="American Flag" />
+
+  <div class="suggestions">
+    <div *ngFor="let suggestion of suggestions">
+      <div class="suggestion p-shadow-2" (click)="search(suggestion)">
+        {{ suggestion }}
+      </div>
+    </div>
+  </div>
+
+</div>

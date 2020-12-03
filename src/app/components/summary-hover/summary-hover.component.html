@@ -1,0 +1,12 @@
+<div #container class="container" (mouseover)="show()" (mouseleave)="hide()">
+  <i class="icon pi pi-question-circle"></i>
+
+  <div
+    class="summary p-shadow-8"
+    *ngIf="!hidden"
+    [ngStyle]="styles"
+  >
+    <h4>From Wikipedia:</h4>
+    <p>{{ summary }}</p>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="container p-shadow-2 {{candidate}}">
+
+  <div class="header">
+    <h2>{{result.displayName}}</h2>
+    <button *ngIf="result.documentUrl" pButton pRipple type="button" icon="pi pi-file-pdf"
+      class="p-button-rounded p-button-info p-button-text" (click)="onViewPdfButton(result)"></button>
+    <a *ngIf="result.documentUrl" pButton icon="pi pi-download" 
+      class="p-button-rounded p-button-info p-button-text" [href]="result.documentUrl"></a>
+  </div>
+    
+  <div class="categories">
+    <div *ngFor="let category of result.categories" class="chip {{candidate}}" (click)="setCategoryFilter(category)">{{category}}</div>
+  </div>
+  
+  <div *ngIf="result.excerpts.length > 0; else emptyExcerpts">
+    <div class="excerpt" *ngFor="let excerpt of result.stylizedExcerpts">
+      <div class="mark">&ldquo;</div>
+      <div class="content" [innerHTML]="'...' + excerpt + '...'"></div>
+    </div>
+  </div>
+  <ng-template #emptyExcerpts>
+    <p>There are no available excerpts, please click download to view this document.</p>
+  </ng-template>
+  
+  <div class="footer">
+    <p class="confidence">Confidence: {{ getConfidenceString(result.confidence)}}</p>
+    <span>Was this relevant?</span>
+    <button pButton pRipple type="button" icon="pi pi-thumbs-down" class="p-button-rounded p-button-text"
+      (click)="negativeFeedback()"></button>
+    <button pButton pRipple type="button" icon="pi pi-thumbs-up" class="p-button-rounded p-button-text"
+      (click)="positiveFeedback()"></button>
+  </div>
+
+</div>

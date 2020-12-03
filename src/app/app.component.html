@@ -1,0 +1,37 @@
+<p-toast position="top-right"></p-toast>
+
+<p-progressBar mode="indeterminate" *ngIf="isLoading$ | async" class="progress"></p-progressBar>
+<div class="header-box p-shadow-3">
+  <app-header></app-header>
+  <app-searchbar></app-searchbar>
+</div>
+
+<div *ngIf="hasSearched$ | async" [ngSwitch]="candidate$ | async">
+  <div *ngSwitchCase="Candidate.BOTH">
+    <div class="split-container">
+      <div class="half">
+        <div class="pres-name">
+          <img class="headshot" src="../assets/trump.png" alt="Donald Trump's Face"/>
+          <h2>Donald Trump</h2>
+        </div>
+        <app-result-list [results]="trumpResults$ | async" [candidate]="Candidate.TRUMP"></app-result-list>
+      </div>
+      <div class="half">
+        <div class="pres-name">
+          <img class="headshot" src="../assets/biden.png" alt="Joe Biden's Face"/>
+          <h2>Joe Biden</h2>
+        </div>
+        <app-result-list [results]="bidenResults$ | async" [candidate]="Candidate.BIDEN"></app-result-list>
+      </div>
+    </div>
+  </div>
+  <div *ngSwitchCase="Candidate.BIDEN">
+    <app-result-list [results]="bidenResults$ | async" [candidate]="Candidate.BIDEN"></app-result-list>
+  </div>
+  <div *ngSwitchCase="Candidate.TRUMP">
+    <app-result-list [results]="trumpResults$ | async" [candidate]="Candidate.TRUMP"></app-result-list>
+  </div>
+</div>
+
+<app-welcome-suggestions *ngIf="!(hasSearched$ | async)"></app-welcome-suggestions>
+<app-pdf-modal></app-pdf-modal>

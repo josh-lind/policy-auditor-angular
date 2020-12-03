@@ -1,0 +1,22 @@
+<div *ngIf="show$ | async" class="background-filter" (click)="onClose()"></div>
+
+<div *ngIf="show$ | async" class="pdf-container p-shadow-6">
+
+    <div class="pdf-controls p-shadow-6">
+
+        <h3>{{(result$ | async).displayName}}</h3>
+
+        <button (click)="onClose()" pButton pRipple type="button" icon="pi pi-times"
+            class="p-button-rounded p-button-text"></button>
+
+    </div>
+
+    <div class="pdf-body">
+        <app-explore-panel [terms]="(result$ | async).terms" class="p-shadow-4" style="margin: 0; padding: 0;"></app-explore-panel>
+        
+        <pdf-viewer [src]="url$ | async" [render-text]="true" [show-all]="true" [original-size]="false"
+            [autoresize]="true" style="display: block;">
+        </pdf-viewer>
+    </div>
+
+</div>
